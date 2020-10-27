@@ -5,10 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.mostfamouspictures.R
+import com.example.mostfamouspictures.viewmodel.ArtistsListViewModel
+import com.example.mostfamouspictures.viewmodel.ViewModelFactory
 
 
 class ArtistsListFragment : Fragment() {
+
+    lateinit var artistsListViewModel: ArtistsListViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,6 +24,25 @@ class ArtistsListFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_artists_list, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupViewModel()
+        observLiveData()
+    }
+
+    private fun setupViewModel() {
+       artistsListViewModel = ViewModelProvider(
+            this,
+            ViewModelFactory()
+        ).get(ArtistsListViewModel::class.java)
+    }
+
+    fun observLiveData(){
+        artistsListViewModel.getartistsList().observe(viewLifecycleOwner, Observer {
+
+        })
+    }
 
 
 
