@@ -1,10 +1,10 @@
-package com.example.mostfamouspictures.viewmodel
+package com.app.mostfamouspictures.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mostfamouspictures.model.Artist
-import com.example.mostfamouspictures.repository.FirebaseRepo
+import com.app.mostfamouspictures.model.Artist
+import com.app.mostfamouspictures.repository.FirebaseRepo
 import kotlinx.coroutines.launch
 import java.util.ArrayList
 

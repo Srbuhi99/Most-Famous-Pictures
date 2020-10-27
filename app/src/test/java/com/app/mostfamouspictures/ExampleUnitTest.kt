@@ -1,4 +1,4 @@
-package com.example.mostfamouspictures
+package com.app.mostfamouspictures
 
 import org.junit.Test
 

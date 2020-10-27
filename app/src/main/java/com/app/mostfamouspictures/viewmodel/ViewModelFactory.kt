@@ -1,10 +1,8 @@
-package com.example.mostfamouspictures.viewmodel
+package com.app.mostfamouspictures.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.mostfamouspictures.repository.FirebaseRepo
-import com.example.mostfamouspictures.view.fragment.ArtistsListFragment
-import com.example.mostfamouspictures.view.fragment.PicturesListFragment
+import com.app.mostfamouspictures.repository.FirebaseRepo
 import java.lang.IllegalArgumentException
 
 class ViewModelFactory: ViewModelProvider.Factory {

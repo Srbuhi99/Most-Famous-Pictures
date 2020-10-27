@@ -1,4 +1,4 @@
-package com.example.mostfamouspictures.model
+package com.app.mostfamouspictures.model
 
 import com.google.firebase.firestore.PropertyName
 

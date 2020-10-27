@@ -1,12 +1,12 @@
-package com.example.mostfamouspictures.view.fragment
+package com.app.mostfamouspictures.view.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.mostfamouspictures.R
-import com.example.mostfamouspictures.view.adapter.MainViewPagerAdapter
+import com.app.mostfamouspictures.R
+import com.app.mostfamouspictures.view.adapter.MainViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_main.*
 

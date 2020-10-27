@@ -1,10 +1,10 @@
-package com.example.mostfamouspictures.view.adapter
+package com.app.mostfamouspictures.view.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.mostfamouspictures.view.fragment.ArtistsListFragment
-import com.example.mostfamouspictures.view.fragment.PicturesListFragment
+import com.app.mostfamouspictures.view.fragment.ArtistsListFragment
+import com.app.mostfamouspictures.view.fragment.PicturesListFragment
 
 class MainViewPagerAdapter( fragmentManager: FragmentManager):FragmentPagerAdapter(fragmentManager,
     BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {

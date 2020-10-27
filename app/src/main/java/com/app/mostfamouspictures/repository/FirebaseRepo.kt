@@ -1,8 +1,8 @@
-package com.example.mostfamouspictures.repository
+package com.app.mostfamouspictures.repository
 
-import com.example.mostfamouspictures.common.DataSource
-import com.example.mostfamouspictures.model.Artist
-import com.example.mostfamouspictures.model.Picture
+import com.app.mostfamouspictures.common.DataSource
+import com.app.mostfamouspictures.model.Artist
+import com.app.mostfamouspictures.model.Picture
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine

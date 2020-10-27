@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/artist_item_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:elevation="8dp"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="@color/design_default_color_primary"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
