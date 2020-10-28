@@ -3,11 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_page_background"
     tools:context=".view.fragment.PicturesListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pictures_recview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 
 </FrameLayout>

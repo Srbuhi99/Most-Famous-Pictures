@@ -1,6 +1,7 @@
 package com.app.mostfamouspictures.view.adapter
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import com.app.mostfamouspictures.R
 import com.app.mostfamouspictures.databinding.PicturesListItemBinding
 import com.app.mostfamouspictures.model.Picture
 import com.app.mostfamouspictures.utils.ItemClickListener
+import kotlinx.android.synthetic.main.pictures_list_item.view.*
 
 class PicturesListAdapter(val context: Context,private var picturesList:ArrayList<Picture>)
     :RecyclerView.Adapter<PicturesListAdapter.ViewHolder>(),ItemClickListener {
@@ -66,7 +68,10 @@ class PicturesListAdapter(val context: Context,private var picturesList:ArrayLis
     }
 
     override fun itemClickListener(view: View) {
-      Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_detailPictureFragment)
+      var bundle = Bundle()
+      var imageId = view.image_id.text.toString()
+      bundle.putString("imageId",imageId)
+      Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_detailPictureFragment,bundle)
     }
 
 }

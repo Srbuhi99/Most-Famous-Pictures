@@ -35,4 +35,16 @@ class FirebaseRepo: DataSource {
 
         }
 
+    override suspend fun getPicture(imageId: String): Picture =
+        suspendCoroutine { cont->
+            firestoreInstance.collection("pictures")
+               .document(imageId)
+                .get()
+                .addOnSuccessListener {
+                    cont.resume(it.toObject(Picture::class.java)!!)
+                }
+        }
+
+
+
 }

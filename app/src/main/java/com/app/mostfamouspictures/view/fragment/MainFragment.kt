@@ -48,6 +48,11 @@ class MainFragment : Fragment() {
             override fun onTabSelected(tab: TabLayout.Tab) {
 
                 main_view_pager.currentItem = tab.position
+
+                when(tab.position){
+                    0 -> main_tab_layout.background = context!!.resources.getDrawable(R.drawable.ic_head_art)
+                    1 -> main_tab_layout.background = context!!.resources.getDrawable(R.drawable.ic_head_artist)
+                }
             }
             override fun onTabUnselected(tab: TabLayout.Tab) {
 

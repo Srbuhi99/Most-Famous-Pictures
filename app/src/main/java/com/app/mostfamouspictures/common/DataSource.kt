@@ -8,4 +8,6 @@ interface DataSource {
     suspend fun getPictures() : List<Picture>
 
     suspend fun getArtists() : List<Artist>
+
+    suspend fun getPicture(imageId:String) : Picture
 }
