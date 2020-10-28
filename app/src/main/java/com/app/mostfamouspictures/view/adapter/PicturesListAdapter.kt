@@ -2,13 +2,18 @@ package com.app.mostfamouspictures.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.app.mostfamouspictures.R
 import com.app.mostfamouspictures.databinding.PicturesListItemBinding
 import com.app.mostfamouspictures.model.Picture
+import com.app.mostfamouspictures.utils.ItemClickListener
 
 class PicturesListAdapter(val context: Context,private var picturesList:ArrayList<Picture>)
-    :RecyclerView.Adapter<PicturesListAdapter.ViewHolder>() {
+    :RecyclerView.Adapter<PicturesListAdapter.ViewHolder>(),ItemClickListener {
 
     private val inflater: LayoutInflater
 
@@ -26,6 +31,7 @@ class PicturesListAdapter(val context: Context,private var picturesList:ArrayLis
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
      holder.bind(picturesList[position])
+     holder.binding.listener = this
     }
 
     override fun getItemCount(): Int {
@@ -43,7 +49,7 @@ class PicturesListAdapter(val context: Context,private var picturesList:ArrayLis
         }
 
 
-    inner class ViewHolder(private var binding:PicturesListItemBinding):RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder( var binding:PicturesListItemBinding):RecyclerView.ViewHolder(binding.root) {
 
         private var pictureModel: Picture? = null
 
@@ -57,6 +63,10 @@ class PicturesListAdapter(val context: Context,private var picturesList:ArrayLis
         }
 
 
+    }
+
+    override fun itemClickListener(view: View) {
+      Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_detailPictureFragment)
     }
 
 }
