@@ -13,4 +13,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+       <!-- <item name="android:fontFamily">@font/cursive</item>-->
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/cardview_light_background</item>
+    </style>
 </resources>

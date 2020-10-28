@@ -1,18 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="com.app.mostfamouspictures.model.Artist"
+            /></data>
+
+<androidx.cardview.widget.CardView
     android:id="@+id/artist_item_card_view"
     android:layout_width="match_parent"
-    android:layout_height="130dp"
+    android:layout_height="60dp"
     android:elevation="8dp"
     app:cardCornerRadius="10dp"
-    app:cardBackgroundColor="@color/design_default_color_primary"
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+       <ImageView
+           android:layout_width="60dp"
+           android:layout_height="60dp"
+           app:profileUrl="@{model.url}"
+           android:layout_marginLeft="10dp"
+           android:layout_marginTop="10dp"
+           />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.artistName}"
+            android:layout_centerInParent="true"
+            />
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
+</layout>
