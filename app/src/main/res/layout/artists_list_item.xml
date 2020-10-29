@@ -6,14 +6,21 @@
         <variable
             name="model"
             type="com.app.mostfamouspictures.model.Artist"
-            /></data>
+            />
+        <variable
+            name="listener"
+            type="com.app.mostfamouspictures.utils.ItemClickListener" />
+
+    </data>
 
 <androidx.cardview.widget.CardView
     android:id="@+id/artist_item_card_view"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="80dp"
     android:elevation="8dp"
     app:cardCornerRadius="10dp"
+    android:layout_margin="4dp"
+    android:onClick="@{listener::itemClickListener}"
     >
 
     <RelativeLayout
@@ -32,6 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{model.artistName}"
+            android:fontFamily="@font/pacifico"
             android:layout_centerInParent="true"
             />
 

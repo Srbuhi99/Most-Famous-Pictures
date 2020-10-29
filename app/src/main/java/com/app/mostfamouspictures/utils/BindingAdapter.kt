@@ -23,7 +23,7 @@ class BindingAdapter {
         fun artistImage(view: ImageView, url:String){
             Glide.with(view.context)
                 .load(url)
-                .apply(RequestOptions.bitmapTransform(RoundedCorners(80)))
+                .apply(RequestOptions.bitmapTransform(RoundedCorners(90)))
                 .into(view)
         }
     }
