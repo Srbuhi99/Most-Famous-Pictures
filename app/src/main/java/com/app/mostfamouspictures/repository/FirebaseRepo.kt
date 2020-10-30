@@ -45,6 +45,18 @@ class FirebaseRepo: DataSource {
                 }
         }
 
+    override suspend fun getArtist(artistId: String): Artist =
+        suspendCoroutine { cont ->
+            firestoreInstance.collection("artist")
+                .document(artistId)
+                .get()
+                .addOnSuccessListener {
+                    cont.resume(it.toObject(Artist::class.java)!!)
+                }
+
+        }
+
+
 
 
 }

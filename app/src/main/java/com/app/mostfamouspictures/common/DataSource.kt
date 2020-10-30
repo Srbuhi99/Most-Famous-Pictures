@@ -10,4 +10,6 @@ interface DataSource {
     suspend fun getArtists() : List<Artist>
 
     suspend fun getPicture(imageId:String) : Picture
+
+    suspend fun getArtist(artistId:String) : Artist
 }

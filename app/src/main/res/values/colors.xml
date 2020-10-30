@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="mainCardBackgroundColor">#f2b66d</color>
+    <color name="tabBackgroundColor">#010A26</color>
 </resources>

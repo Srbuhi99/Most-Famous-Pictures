@@ -11,7 +11,7 @@
       android:layout_width="match_parent"
       app:tabTextAppearance="@style/tab_text"
       android:background="@drawable/ic_head_art"
-      app:tabTextColor="@color/black"
+      app:tabTextColor="@color/tabBackgroundColor"
       app:tabSelectedTextColor="@color/white"
       app:tabGravity="fill"
       app:tabMode="fixed"

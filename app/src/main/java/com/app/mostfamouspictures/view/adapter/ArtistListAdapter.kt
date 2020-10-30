@@ -1,6 +1,7 @@
 package com.app.mostfamouspictures.view.adapter
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,8 @@ import com.app.mostfamouspictures.R
 import com.app.mostfamouspictures.databinding.ArtistsListItemBinding
 import com.app.mostfamouspictures.model.Artist
 import com.app.mostfamouspictures.utils.ItemClickListener
+import kotlinx.android.synthetic.main.artists_list_item.view.*
+import kotlinx.android.synthetic.main.pictures_list_item.view.*
 
 class ArtistListAdapter(val context: Context, private var artistList:ArrayList<Artist>)
     :RecyclerView.Adapter<ArtistListAdapter.ViewHolder>(),ItemClickListener{
@@ -50,7 +53,10 @@ class ArtistListAdapter(val context: Context, private var artistList:ArrayList<A
     }
 
     override fun itemClickListener(view: View) {
-        Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_detailArtistFragment)
+        var bundle = Bundle()
+        var artistId = view.artist_id.text.toString()
+        bundle.putString("artistId", artistId)
+        Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_detailArtistFragment,bundle)
     }
 
 }

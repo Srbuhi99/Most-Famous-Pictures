@@ -16,6 +16,14 @@ class ViewModelFactory: ViewModelProvider.Factory {
             return ArtistsListViewModel(FirebaseRepo()) as T
         }
 
+        if(modelClass.isAssignableFrom(DetailPictureViewModel::class.java)){
+            return  DetailPictureViewModel(FirebaseRepo()) as T
+        }
+
+        if(modelClass.isAssignableFrom(DetailArtistViewModel::class.java)){
+            return DetailArtistViewModel(FirebaseRepo()) as T
+        }
+
         throw  IllegalArgumentException("Unknown class name")
 
     }
