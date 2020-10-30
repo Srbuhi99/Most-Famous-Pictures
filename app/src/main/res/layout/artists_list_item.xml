@@ -49,7 +49,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{model.artistName}"
-            android:fontFamily="@font/pacifico"
+            android:fontFamily="cursive"
+            android:textColor="@color/black"
+            android:textSize="2.6mm"
             android:layout_centerInParent="true"
             />
 

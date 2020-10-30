@@ -88,4 +88,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+    //library to work with gif
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
 }

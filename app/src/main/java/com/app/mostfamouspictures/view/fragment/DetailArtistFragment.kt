@@ -13,6 +13,7 @@ import com.app.mostfamouspictures.databinding.FragmentDetailArtistBinding
 import com.app.mostfamouspictures.viewmodel.DetailArtistViewModel
 import com.app.mostfamouspictures.viewmodel.ViewModelFactory
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.content_scrolling.view.*
 
 
 class DetailArtistFragment : Fragment() {
@@ -51,6 +52,10 @@ class DetailArtistFragment : Fragment() {
     fun observLiveData(){
         detailArtistViewModel.artist.observe(viewLifecycleOwner, Observer {
             Glide.with(requireActivity()).load(it.url).into(databinding.detailArtistImv)
+            databinding.inqludeView.biograppi.text = it.biography
+            databinding.inqludeView.education_info.text = it.education
+            databinding.inqludeView.personal_info.text = it.personalLife
+            databinding.inqludeView.art_info.text = it.art
             databinding.model = it
         })
     }

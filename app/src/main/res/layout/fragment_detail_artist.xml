@@ -28,7 +28,6 @@
                 android:layout_height="wrap_content"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 android:fitsSystemWindows="true"
-                app:contentScrim="?attr/colorPrimary"
                 app:toolbarId="@+id/toolbar"
                 >
 
@@ -41,7 +40,9 @@
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
-        <include layout="@layout/content_scrolling" />
+        <include layout="@layout/content_scrolling"
+           android:id="@+id/inqlude_view"
+            />
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
@@ -59,9 +60,9 @@
             android:layout_height="wrap_content"
             android:text="@{model.artistName}"
             android:textColor="@color/mainCardBackgroundColor"
-            android:textSize="2mm"
+            android:textSize="3mm"
             android:layout_margin="10dp"
-            android:fontFamily="@font/pacifico"
+            android:fontFamily="cursive"
             />
         </androidx.cardview.widget.CardView>
 

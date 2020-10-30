@@ -5,9 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+    tools:context=".view.activity.MainActivity"
     tools:showIn="@layout/fragment_detail_picture">
-
 
 
     <androidx.cardview.widget.CardView
@@ -19,15 +18,72 @@
         android:layout_marginTop="40dp"
         app:cardCornerRadius="8dp"
         >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
     <TextView
+        android:id="@+id/biograppi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        >
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/edu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/biograppi"
+        android:text="Education"
+        android:fontFamily="cursive"
+        android:textColor="@color/mainCardBackgroundColor"
+        android:textSize="3mm"
+        />
+     <TextView
+         android:id="@+id/education_info"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/edu"
+         android:layout_margin="10dp"
+         />
+      <TextView
+          android:id="@+id/per"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Personal Life"
+          android:layout_margin="10dp"
+          android:layout_below="@+id/education_info"
+          android:textColor="@color/mainCardBackgroundColor"
+          android:fontFamily="cursive"
+          android:textSize="3mm"
+          />
+       <TextView
+           android:id="@+id/personal_info"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_margin="10dp"
+           android:layout_below="@+id/per"
+           />
+       <TextView
+           android:id="@+id/art"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Art"
+           android:layout_margin="10dp"
+           android:layout_below="@+id/personal_info"
+           android:textColor="@color/mainCardBackgroundColor"
+           android:fontFamily="cursive"
+           android:textSize="3mm"
+           />
+       <TextView
+           android:id="@+id/art_info"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_margin="10dp"
+           android:layout_below="@+id/art"
+           />
 
-    </TextView>
-
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
 
