@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.app.mostfamouspictures.R
@@ -18,6 +19,7 @@ class ArtistListAdapter(val context: Context, private var artistList:ArrayList<A
     :RecyclerView.Adapter<ArtistListAdapter.ViewHolder>(),ItemClickListener{
 
     private val inflater: LayoutInflater
+
 
     init {
         inflater = LayoutInflater.from(context)
@@ -33,6 +35,9 @@ class ArtistListAdapter(val context: Context, private var artistList:ArrayList<A
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(artistList[position])
         holder.binding.listener = this
+
+        holder.choosingRam(position,context)
+
     }
 
     override fun getItemCount(): Int {
@@ -41,7 +46,7 @@ class ArtistListAdapter(val context: Context, private var artistList:ArrayList<A
 
     inner class ViewHolder( var binding:ArtistsListItemBinding):RecyclerView.ViewHolder(binding.root){
         private var artistModel: Artist? = null
-
+        var i = 0
         fun bind( artist: Artist){
             artistModel = artist
             setUpItem()
@@ -49,6 +54,19 @@ class ArtistListAdapter(val context: Context, private var artistList:ArrayList<A
 
         fun setUpItem(){
             binding.model = artistModel
+        }
+
+        fun choosingRam(position: Int, context: Context){
+
+            if(i < 1) {
+                if (position % 2 == 0) {
+                    binding.firstRam.visibility = View.VISIBLE
+                }
+                if (position % 2 != 0) {
+                    binding.secondRam.visibility = View.VISIBLE
+                }
+                i++
+            }
         }
     }
 
@@ -58,5 +76,7 @@ class ArtistListAdapter(val context: Context, private var artistList:ArrayList<A
         bundle.putString("artistId", artistId)
         Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_detailArtistFragment,bundle)
     }
+
+
 
 }

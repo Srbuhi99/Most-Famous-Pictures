@@ -1,5 +1,6 @@
 package com.app.mostfamouspictures.viewmodel
 
+
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -17,4 +18,5 @@ class DetailArtistViewModel(private var firebaseRepo: FirebaseRepo) : ViewModel(
             artist.value = firebaseRepo.getArtist(artistId)
         }
     }
+
 }

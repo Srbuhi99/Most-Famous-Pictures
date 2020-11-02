@@ -9,7 +9,8 @@ data class Artist(
     var biography: String,
     var art: String,
     @set:PropertyName("personal_life") @get:PropertyName("personal_life") var personalLife:String,
-    var education:String
+    var education:String,
+    var lifetime:String
     ){
-    constructor():this("","","","","","","")
+    constructor():this("","","","","","","","")
 }

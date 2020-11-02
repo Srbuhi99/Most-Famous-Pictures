@@ -8,6 +8,7 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.app.mostfamouspictures.R
+import com.app.mostfamouspictures.utils.NotificationsHelper
 import com.app.mostfamouspictures.viewmodel.SplashState
 import com.app.mostfamouspictures.viewmodel.SplashViewModel
 
@@ -25,6 +26,7 @@ class SplashActivity : AppCompatActivity() {
             when (it) {
                 is SplashState.MainActivity -> {
                     var intent = Intent(this,MainActivity::class.java)
+                    NotificationsHelper(this).createNofitication()
                     startActivity(intent)
                     finish()
                 }

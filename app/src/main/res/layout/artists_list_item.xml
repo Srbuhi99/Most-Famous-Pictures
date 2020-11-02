@@ -10,16 +10,16 @@
         <variable
             name="listener"
             type="com.app.mostfamouspictures.utils.ItemClickListener" />
-
     </data>
 
 <androidx.cardview.widget.CardView
     android:id="@+id/artist_item_card_view"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="70dp"
     android:elevation="8dp"
-    app:cardCornerRadius="10dp"
     android:layout_margin="4dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
     android:onClick="@{listener::itemClickListener}"
     >
 
@@ -41,19 +41,49 @@
            android:layout_width="60dp"
            android:layout_height="60dp"
            app:profileUrl="@{model.url}"
+           android:layout_centerVertical="true"
            android:layout_marginLeft="10dp"
-           android:layout_marginTop="10dp"
            />
+
+        <ImageView
+            android:id="@+id/first_ram"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/ic_ram"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/second_ram"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/ic_ram"
+            android:layout_marginLeft="13dp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/artist_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.artistName}"
+            android:fontFamily="@font/pacifico"
+            android:textColor="@color/black"
+            android:textSize="2.8mm"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{model.artistName}"
-            android:fontFamily="cursive"
-            android:textColor="@color/black"
+            android:layout_below="@+id/artist_name"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/pacifico"
             android:textSize="2.6mm"
-            android:layout_centerInParent="true"
-            />
+            android:text="@{model.lifetime}"
+            android:textColor="@color/mainCardBackgroundColor" />
 
     </RelativeLayout>
 
