@@ -29,7 +29,7 @@ class NotificationsHelper(val context: Context) {
         val icon = BitmapFactory.decodeResource(context.resources, R.drawable.notification_image)
 
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.notification_image)
+                .setSmallIcon(R.drawable.logo)
                 .setLargeIcon(icon)
                 .setContentTitle("Most Famoust Pictures")
                 .setContentText("Welcome to app :)")

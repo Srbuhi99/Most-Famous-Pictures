@@ -1,5 +1,6 @@
 package com.app.mostfamouspictures.view.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.app.mostfamouspictures.R
 import com.app.mostfamouspictures.databinding.FragmentDetailPictureBinding
+import com.app.mostfamouspictures.utils.ShareLogicUtil
 import com.app.mostfamouspictures.viewmodel.DetailPictureViewModel
 import com.app.mostfamouspictures.viewmodel.ViewModelFactory
 import com.bumptech.glide.Glide
@@ -22,6 +24,7 @@ class DetailPictureFragment : Fragment() {
     var imageId = ""
     private lateinit var dataBinding : FragmentDetailPictureBinding
     lateinit var detailPictureViewModel: DetailPictureViewModel
+    var text = ""
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -41,7 +44,7 @@ class DetailPictureFragment : Fragment() {
 
         setupViewModel()
         observLiveData()
-
+        addListenerToShareBtn()
     }
 
 
@@ -58,8 +61,25 @@ class DetailPictureFragment : Fragment() {
 
             Glide.with(requireActivity()).load(it.imageUrl)
                 .into(dataBinding.detailPictureImv)
+            text = it.description
 
         })
     }
+
+    fun addListenerToShareBtn(){
+        dataBinding.pictureShareBtn.setOnClickListener {
+            shareIntent()
+        }
+    }
+
+    fun shareIntent(){
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        shareIntent.putExtra(Intent.EXTRA_TEXT, text)
+        shareIntent.putExtra(Intent.EXTRA_STREAM, ShareLogicUtil(requireContext(),dataBinding.detailPictureImv,requireActivity()).shareContent())
+        shareIntent.type = "image/png"
+        startActivity(Intent.createChooser(shareIntent, "Share image via"))
+    }
+
 
 }
