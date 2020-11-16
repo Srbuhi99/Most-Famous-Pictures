@@ -16,6 +16,4 @@ class DetailPictureViewModel(private var firebaseRepo: FirebaseRepo): ViewModel(
              picture.value = firebaseRepo.getPicture(imageId)
          }
      }
-
-
 }

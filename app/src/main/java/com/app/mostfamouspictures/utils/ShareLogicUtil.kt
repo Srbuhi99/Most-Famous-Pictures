@@ -26,7 +26,7 @@ class ShareLogicUtil(var context : Context, var view: View, var activity: Activi
             fOut.close()
             file.setReadable(true, false)
             bmpUri =  FileProvider.getUriForFile(context,
-                    activity.getApplicationContext().getPackageName() + ".provider", file);
+                    activity.getApplicationContext().getPackageName() + ".provider", file)
 
         } catch (e: java.lang.Exception) {
             e.printStackTrace()

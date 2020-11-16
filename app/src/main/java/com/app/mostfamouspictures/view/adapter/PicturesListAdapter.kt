@@ -40,15 +40,14 @@ class PicturesListAdapter(val context: Context,private var picturesList:ArrayLis
        return  picturesList.size
     }
 
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
 
-        override fun getItemId(position: Int): Long {
-            return position.toLong()
-        }
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
 
-
-        override fun getItemViewType(position: Int): Int {
-            return position
-        }
 
 
     inner class ViewHolder( var binding:PicturesListItemBinding):RecyclerView.ViewHolder(binding.root) {
@@ -63,7 +62,6 @@ class PicturesListAdapter(val context: Context,private var picturesList:ArrayLis
         fun setUpItem(){
             binding.model = pictureModel
         }
-
 
     }
 

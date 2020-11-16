@@ -6,85 +6,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".view.activity.MainActivity"
+    android:background="@color/tabBackgroundColor"
     tools:showIn="@layout/fragment_detail_picture">
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardElevation="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp"
-        app:cardCornerRadius="8dp"
-        >
-        <RelativeLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/ic_custom_size_ram_artist"
+            />
+
+        <androidx.cardview.widget.CardView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:cardElevation="10dp"
+           android:layout_marginLeft="20dp"
+           android:layout_marginRight="20dp"
+           android:layout_marginTop="40dp"
+           >
+
+
+    <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/biograppi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        />
-    <TextView
-        android:id="@+id/edu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_below="@+id/biograppi"
-        android:text="Education"
-        android:fontFamily="cursive"
-        android:textColor="@color/mainCardBackgroundColor"
-        android:textSize="3mm"
-        />
      <TextView
-         android:id="@+id/education_info"
+         android:id="@+id/biograppi"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_below="@+id/edu"
-         android:layout_margin="10dp"
+         android:layout_marginStart="10dp"
+         android:layout_marginTop="10dp"
+         android:layout_marginEnd="10dp"
+         android:layout_marginBottom="10dp"
+         android:theme="@style/SecondaryTextViewStyle"
          />
+
+    <TextView
+        android:id="@+id/edu"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/biograppi"
+        android:text="@string/education_string"
+        android:theme="@style/HeadingTextViewStyle"
+        />
+
+     <TextView
+         android:id="@+id/education_info"
+         android:layout_margin="10dp"
+         android:layout_below="@+id/edu"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:theme="@style/SecondaryTextViewStyle"
+         />
+
       <TextView
           android:id="@+id/per"
+          android:layout_margin="10dp"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="Personal Life"
-          android:layout_margin="10dp"
+          android:text="@string/personal_life_string"
           android:layout_below="@+id/education_info"
-          android:textColor="@color/mainCardBackgroundColor"
-          android:fontFamily="cursive"
-          android:textSize="3mm"
+          android:theme="@style/HeadingTextViewStyle"
           />
+
        <TextView
            android:id="@+id/personal_info"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
            android:layout_margin="10dp"
            android:layout_below="@+id/per"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:theme="@style/SecondaryTextViewStyle"
            />
+
        <TextView
            android:id="@+id/art"
+           android:layout_margin="10dp"
+           android:text="@string/art_string"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="Art"
-           android:layout_margin="10dp"
            android:layout_below="@+id/personal_info"
-           android:textColor="@color/mainCardBackgroundColor"
-           android:fontFamily="cursive"
-           android:textSize="3mm"
+           android:theme="@style/HeadingTextViewStyle"
            />
+
        <TextView
            android:id="@+id/art_info"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
            android:layout_margin="10dp"
            android:layout_below="@+id/art"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:theme="@style/SecondaryTextViewStyle"
            />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
-
+    </RelativeLayout>
 
 </androidx.core.widget.NestedScrollView>

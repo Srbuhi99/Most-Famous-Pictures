@@ -12,7 +12,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.example.mostfamouspictures"
+        applicationId "com.app.mostfamouspictures"
         minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
@@ -25,12 +25,16 @@ android {
         enabled true
     }
 
+
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable false
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -38,6 +42,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    flavorDimensions "default"
+    productFlavors {
+        free {
+            applicationId "com.app.mostfamouspictures"
+        }
+    }
+
 }
 
 dependencies {

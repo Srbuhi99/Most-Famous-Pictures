@@ -29,9 +29,6 @@ class FirebaseRepo: DataSource {
                 .addOnSuccessListener {
                     cont.resume(it.toObjects(Artist::class.java))
                 }
-                .addOnFailureListener {
-                    it.message
-                }
 
         }
 
@@ -59,4 +56,4 @@ class FirebaseRepo: DataSource {
 
 
 
-}
+    }

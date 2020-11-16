@@ -33,9 +33,10 @@ class DetailArtistFragment : Fragment() {
 
       lateinit var databinding : FragmentDetailArtistBinding
       lateinit var detailArtistViewModel: DetailArtistViewModel
+
+      var  artistId = ""
       var  body = ""
-      var artistId = ""
-      var url =""
+      var  url =""
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -60,18 +61,27 @@ class DetailArtistFragment : Fragment() {
         detailArtistViewModel =
             ViewModelProvider(this, ViewModelFactory())
                 .get(DetailArtistViewModel::class.java)
-        detailArtistViewModel.fetch(artistId)
+                 detailArtistViewModel.fetch(artistId)
     }
 
     fun observLiveData(){
         detailArtistViewModel.artist.observe(viewLifecycleOwner, Observer {
-            Glide.with(requireActivity()).load(it.url).into(databinding.detailArtistImv)
-            body = it.biography
-            url = it.url
+
+            // init include view variables
+            Glide.with(requireActivity())
+                    .load(it.url)
+                    .into(databinding.detailArtistImv)
+
             databinding.inqludeView.biograppi.text = it.biography
             databinding.inqludeView.education_info.text = it.education
             databinding.inqludeView.personal_info.text = it.personalLife
             databinding.inqludeView.art_info.text = it.art
+
+            //init share data
+            body = it.biography
+            url = it.url
+
+            //init model variable
             databinding.model = it
         })
     }
@@ -86,7 +96,8 @@ class DetailArtistFragment : Fragment() {
         val intent = Intent(Intent.ACTION_SEND)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         intent.putExtra(Intent.EXTRA_TEXT, body)
-        intent.putExtra(Intent.EXTRA_STREAM, ShareLogicUtil(requireContext(),databinding.detailArtistImv,requireActivity()).shareContent())
+        intent.putExtra(Intent.EXTRA_STREAM, ShareLogicUtil(requireContext(),
+                        databinding.detailArtistImv,requireActivity()).shareContent())
         intent.type = "image/png"
         startActivity(Intent.createChooser(intent, "Share image via"))
     }

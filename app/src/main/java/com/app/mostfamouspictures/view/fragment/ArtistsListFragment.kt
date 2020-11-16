@@ -32,7 +32,6 @@ class ArtistsListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         setupViewModel()
         observLiveData()
         addAdapter()
@@ -68,7 +67,5 @@ class ArtistsListFragment : Fragment() {
         artists_recview.adapter =
             adapter
     }
-
-
 
 }

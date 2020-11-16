@@ -22,6 +22,34 @@
         <item name="android:textSize">21sp</item>
     </style>
 
+    <style name="HeadingTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/pacifico</item>
+        <item name="android:textSize">3mm</item>
+        <item name="android:textColor">@color/mainCardBackgroundColor</item>
+    </style>
+
+    <style name="SecondaryTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="ArtistNameTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/pacifico</item>
+        <item name="android:textSize">2.8mm</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="MainTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/pacifico</item>
+        <item name="android:textSize">3.6mm</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ArtistLongevityTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/pacifico</item>
+        <item name="android:textSize">2.6mm</item>
+        <item name="android:textColor">@color/mainCardBackgroundColor</item>
+    </style>
 
     <style name="Theme.MaterialComponents.NoActionBar">
         <item name="windowActionBar">false</item>

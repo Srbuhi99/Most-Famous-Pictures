@@ -49,6 +49,7 @@ class PicturesListFragment : Fragment() {
     }
 
     fun addDataToAdapter(data:ArrayList<Picture>){
+
         StaggeredGridLayoutManager(
             2,
             StaggeredGridLayoutManager.VERTICAL
@@ -59,6 +60,5 @@ class PicturesListFragment : Fragment() {
         pictures_recview.adapter = PicturesListAdapter(requireContext(),data)
 
     }
-
 
 }

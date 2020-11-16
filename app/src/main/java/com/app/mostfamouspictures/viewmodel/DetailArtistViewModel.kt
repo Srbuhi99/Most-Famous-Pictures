@@ -18,5 +18,4 @@ class DetailArtistViewModel(private var firebaseRepo: FirebaseRepo) : ViewModel(
             artist.value = firebaseRepo.getArtist(artistId)
         }
     }
-
 }

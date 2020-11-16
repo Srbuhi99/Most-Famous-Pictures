@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "779756581489",
+    "firebase_url": "https://the-famous-pictures.firebaseio.com",
+    "project_id": "the-famous-pictures",
+    "storage_bucket": "the-famous-pictures.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779756581489:android:80639ae7c38387633b61d0",
+        "android_client_info": {
+          "package_name": "com.app.mostfamouspictures"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779756581489-7jjet9l0jbd1g0bdorutgvamm8qrpk0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqJYJ91L8ZDYx8m7Su_mI9hFcUs2-umcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779756581489-7jjet9l0jbd1g0bdorutgvamm8qrpk0b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779756581489:android:4de99f0827f2483d3b61d0",
+        "android_client_info": {
+          "package_name": "com.example.mostfamouspictures"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779756581489-e5pvsje2ov8je0ofdtaungrjbdk5cp83.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mostfamouspictures",
+            "certificate_hash": "c989608d4845518919fd5622daf4fc095acacb05"
+          }
+        },
+        {
+          "client_id": "779756581489-7jjet9l0jbd1g0bdorutgvamm8qrpk0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqJYJ91L8ZDYx8m7Su_mI9hFcUs2-umcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779756581489-7jjet9l0jbd1g0bdorutgvamm8qrpk0b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

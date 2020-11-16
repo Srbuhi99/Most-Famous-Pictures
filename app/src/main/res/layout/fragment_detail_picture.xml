@@ -11,43 +11,101 @@
         android:id="@+id/constraint_layout"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
+            android:scaleX="1.05"
               >
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/toolbar_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 app:toolbarId="@+id/toolbar"
                 >
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+
+                    <RelativeLayout
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:id="@+id/main_toolbar_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="30dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_width="match_parent"
+                            android:text="@{model.pictureTitle}"
+                            android:background="@color/tabBackgroundColor"
+                            android:layout_gravity ="center_horizontal"
+                            android:theme="@style/MainTextViewStyle"
+                            />
+
+                        <ImageView
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/ic_title_back_ram"
+                            />
+
+                    </RelativeLayout>
+                </androidx.appcompat.widget.Toolbar>
 
                 <ImageView
                     android:id="@+id/detail_picture_imv"
                     android:layout_width="wrap_content"
                     android:layout_height="400dp"
-
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="60dp"
                     />
+                </RelativeLayout>
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
-        <include layout="@layout/content_scrolling" />
+        <include layout="@layout/content_scroll_picture"
+            android:id="@+id/picture_des_scroll_view"
+            />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/picture_share_btn"
+        <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             app:layout_anchor="@id/app_bar"
-            app:layout_anchorGravity="bottom|end"
-            app:srcCompat="@android:drawable/ic_menu_share" />
+            app:layout_anchorGravity="bottom|center"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginLeft="10dp"
+            app:cardElevation="10dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.artistName}"
+                android:textColor="@color/mainCardBackgroundColor"
+                android:textSize="3mm"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/pacifico"
+                android:gravity="center"
+                />
+        </androidx.cardview.widget.CardView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

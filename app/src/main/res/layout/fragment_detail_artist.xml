@@ -11,30 +11,66 @@
         android:id="@+id/constraint_layout"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="438dp"
             android:background="@color/white"
             android:theme="@style/AppTheme.AppBarOverlay"
             android:scaleX="1.05"
             >
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:id="@+id/toolbar_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                android:fitsSystemWindows="true"
                 app:toolbarId="@+id/toolbar"
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 >
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+
+                    <RelativeLayout
+                        android:id="@+id/main_toolbar_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_gravity ="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/tabBackgroundColor"
+                        android:text="@{model.artistName}"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:theme="@style/MainTextViewStyle"
+                        />
+
+                        <ImageView
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/ic_title_back_ram"
+                            />
+                    </RelativeLayout>
+                </androidx.appcompat.widget.Toolbar>
 
                 <ImageView
                     android:id="@+id/detail_artist_imv"
                     android:layout_width="wrap_content"
                     android:layout_height="388dp"
+                    android:layout_marginTop="60dp"
                     />
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -45,36 +81,35 @@
             />
 
         <androidx.cardview.widget.CardView
+            app:cardElevation="10dp"
+            android:layout_marginLeft="10dp"
+            app:layout_anchor="@id/app_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_anchor="@id/app_bar"
-            app:layout_anchorGravity="bottom|start"
+            app:layout_anchorGravity="bottom|center"
             app:cardBackgroundColor="@color/white"
-            android:layout_marginLeft="10dp"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="10dp"
             >
 
         <TextView
+            android:gravity="center"
+            android:layout_margin="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{model.artistName}"
-            android:textColor="@color/mainCardBackgroundColor"
-            android:textSize="3mm"
-            android:layout_margin="10dp"
-            android:fontFamily="cursive"
+            android:text="@{model.lifetime}"
+            android:theme="@style/HeadingTextViewStyle"
             />
         </androidx.cardview.widget.CardView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            app:tint="@color/red"
+            android:layout_margin="10dp"
+            app:layout_anchor="@id/app_bar"
+            app:backgroundTint="@color/white"
             android:id="@+id/artist_share_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:layout_anchor="@id/app_bar"
             app:layout_anchorGravity="bottom|end"
-            app:srcCompat="@android:drawable/ic_menu_share"
-            app:backgroundTint="@color/mainCardBackgroundColor"
+            app:srcCompat="@drawable/ic_baseline_share"
             />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
